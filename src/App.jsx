@@ -1,10 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from "react";
+import "./App.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import authService from "./appwrite/auth";
+import { login } from "./redux/authSlice";
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    authService
+      .getCurrentUser()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login({userData}))
+        }
+      })
+      .finally();
+  }, []);
 
   return (
     <>
@@ -29,7 +42,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
