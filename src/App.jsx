@@ -7,9 +7,10 @@ import { login, logout } from "./redux/authSlice";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
+
 function App() {
-  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     authService
@@ -29,14 +30,12 @@ function App() {
       <div className="w-full block">
         <Header />
         <main>
-          <Outlet />
+          TODO: <Outlet />
         </main>
         <Footer />
       </div>
     </div>
-  ) : (
-    <div>Loading...</div>
-  );
+  ) : null;
 }
 
 export default App;

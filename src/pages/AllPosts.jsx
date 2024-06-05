@@ -5,8 +5,8 @@ import PostCard from "../components/PostCard";
 function AllPosts() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(async () => {
-    await service.getPosts([]).then((posts) => {
+  useEffect(() => {
+    service.getPosts([]).then((posts) => {
       if (posts) {
         setPosts(posts.documents);
       }

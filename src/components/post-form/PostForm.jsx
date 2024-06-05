@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../Button";
 import Select from "../Select";
+import Input from "../Input";
 import RTE from "../RTE";
 import service from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";

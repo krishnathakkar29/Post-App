@@ -1,4 +1,4 @@
-import { Container } from "postcss";
+import Container from "../components/container/Container";
 import React from "react";
 import PostForm from "../components/post-form/PostForm";
 
